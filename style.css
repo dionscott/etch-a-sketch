@@ -1,0 +1,10 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+/* .grid needs to be flex and 16 in each row */
+.grid {
+    /* display: flex; */
+    flex: 1 1 6%;
+}
