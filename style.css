@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -5,6 +10,14 @@
 }
 /* .grid needs to be flex and 16 in each row */
 .grid {
-    /* display: flex; */
+    /* display: flex;
+    justify-content: space-between; */
     flex: 1 1 6%;
+    border: 1px solid black;
+    min-height: 20px;
+    /* height: 100%; */
+}
+
+.grid:hover {
+    background-color: aqua;
 }
