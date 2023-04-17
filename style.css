@@ -18,6 +18,6 @@ body {
     /* height: 100%; */
 }
 
-.grid:hover {
+.change {
     background-color: aqua;
 }

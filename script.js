@@ -7,3 +7,15 @@ for (x = 0; x < 256; x++) {
     container.appendChild(grid)
 }
 
+function change() {
+    this.classList.toggle("change")
+}
+
+let grids = document.querySelectorAll('.grid')
+
+for (const grid of grids) {
+    grid.addEventListener("mouseover", change)
+}
+
+
+
