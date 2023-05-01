@@ -52,14 +52,21 @@ function remove() {
 createGrid();
 
 function changeSize() {
-    let number = prompt("How many?", "16")
+    let number = prompt("How many squares per side would you like?", "Please input a number below 100")
     return number;
 }
 
 function resetGrid() {
     let squares = changeSize();
-    remove();
-    createGrid(squares);
+    //checks if the squares value is valid
+    if ((Number(squares) <= 100) && (Number(squares) > 0)) {
+        remove();
+        createGrid(squares);
+    } else {
+        //if not do nothing and alert the user to try again
+        alert("You did not input a number between 1 and 100. Try again.")
+    }
+    
 }
 let button = document.querySelector('#change-size');
 button.addEventListener('click', resetGrid)
