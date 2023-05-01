@@ -1,10 +1,5 @@
 const container = document.querySelector('#container');
 
-//initialize a number for boxes
-
-
-
-
 function createGrid(rowsAndColumns) {
     let squares = rowsAndColumns
 //create number of rows
@@ -24,6 +19,7 @@ function createGrid(rowsAndColumns) {
             row.appendChild(column)
         }
     }
+    paint();
 }
 
 createGrid(25);
@@ -31,14 +27,18 @@ createGrid(25);
 function change() {
     this.classList.toggle("change")
 }
+function paint() {
+    let grids = document.querySelectorAll('.grid')
 
-let grids = document.querySelectorAll('.grid')
-
-for (const grid of grids) {
-    grid.addEventListener("mouseover", change);
+    for (const grid of grids) {
+        grid.addEventListener("mouseover", change);
+    }
 }
 
+
 function remove() {
+
+    let grids = document.querySelectorAll('.grid')
     //remove columns
     for (const grid of grids) {
         grid.remove();
