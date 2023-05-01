@@ -1,6 +1,6 @@
 const container = document.querySelector('#container');
 
-function createGrid(rowsAndColumns) {
+function createGrid(rowsAndColumns = 16) {
     let squares = rowsAndColumns
 //create number of rows
     for (let x = 0; x < squares; x++) {
@@ -21,8 +21,6 @@ function createGrid(rowsAndColumns) {
     }
     paint();
 }
-
-createGrid(25);
 
 function change() {
     this.classList.toggle("change")
@@ -51,4 +49,17 @@ function remove() {
     }
 }
 
+createGrid();
 
+function changeSize() {
+    let number = prompt("How many?", "16")
+    return number;
+}
+
+function resetGrid() {
+    let squares = changeSize();
+    remove();
+    createGrid(squares);
+}
+let button = document.querySelector('#change-size');
+button.addEventListener('click', resetGrid)
