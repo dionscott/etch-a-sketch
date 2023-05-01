@@ -26,7 +26,7 @@ function createGrid(rowsAndColumns) {
     }
 }
 
-createGrid(15)
+createGrid(25);
 
 function change() {
     this.classList.toggle("change")
@@ -38,5 +38,17 @@ for (const grid of grids) {
     grid.addEventListener("mouseover", change);
 }
 
+function remove() {
+    //remove columns
+    for (const grid of grids) {
+        grid.remove();
+    }
+    //find rows
+    let rows = document.querySelectorAll('.row');
+    //remove rows
+    for (const row of rows) {
+        row.remove();
+    }
+}
 
 
