@@ -2,6 +2,7 @@ const container = document.querySelector('#container');
 
 function createGrid(rowsAndColumns = 16) {
     let squares = rowsAndColumns
+    changeDimension(squares);
 //create number of rows
     for (let x = 0; x < squares; x++) {
         let grid = document.createElement('div');
@@ -25,6 +26,7 @@ function createGrid(rowsAndColumns = 16) {
 function change() {
     this.classList.toggle("change")
 }
+
 function paint() {
     let grids = document.querySelectorAll('.grid')
 
@@ -32,7 +34,6 @@ function paint() {
         grid.addEventListener("mouseover", change);
     }
 }
-
 
 function remove() {
 
@@ -49,10 +50,8 @@ function remove() {
     }
 }
 
-createGrid();
-
 function changeSize() {
-    let number = prompt("How many squares per side would you like?", "Please input a number below 100")
+    let number = prompt("How many squares per side would you like?", "Please input a number between 1 and 100")
     return number;
 }
 
@@ -66,7 +65,13 @@ function resetGrid() {
         //if not do nothing and alert the user to try again
         alert("You did not input a number between 1 and 100. Try again.")
     }
-    
 }
+
+function changeDimension(sides) {
+    let dimension = document.querySelector('#dimensions')
+    dimension.innerHTML = sides + ' X ' + sides 
+}
+
+createGrid();
 let button = document.querySelector('#change-size');
 button.addEventListener('click', resetGrid)

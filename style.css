@@ -29,3 +29,8 @@ body {
     display: flex;
     justify-content: center;
 }
+
+#dimensions {
+    display: flex;
+    justify-content: center;
+}
