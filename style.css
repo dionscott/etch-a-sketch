@@ -14,6 +14,7 @@ body {
 .grid {
     flex: 1;
     border: .5px solid black;
+    transition: background .6s;
 }
 
 .row {

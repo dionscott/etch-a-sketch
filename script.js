@@ -24,7 +24,7 @@ function createGrid(rowsAndColumns = 16) {
 }
 
 function change() {
-    this.classList.toggle("change")
+    this.style.backgroundColor = randomColor();
 }
 
 function paint() {
@@ -70,6 +70,15 @@ function resetGrid() {
 function changeDimension(sides) {
     let dimension = document.querySelector('#dimensions')
     dimension.innerHTML = sides + ' X ' + sides 
+}
+
+function randomColor() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+
+    let bgColor = "rgb(" + x + "," + y + ","+ z + ")";
+    return bgColor;
 }
 
 createGrid();
