@@ -23,8 +23,28 @@ function createGrid(rowsAndColumns = 16) {
     paint();
 }
 
+//darkens the color by lowering brightness
+function darkenColor(string) {
+    //remove last four characters of string
+    let incompleteColor = string.slice(0, -4);
+    //returns the first number of the brightness
+    let brightness = string.substr(11, 1);
+    newBrightness = (Number(brightness) - 1).toString();
+    let result = string.replace(brightness, newBrightness);
+    return result; 
+}
+
 function change() {
-    this.style.backgroundColor = randomColor();
+    styles = this.style.backgroundColor
+    if (styles) {
+        if (this.style.filter) {
+            this.style.filter = darkenColor(this.style.filter)
+        } else {
+            this.style.filter = "brightness(90%)"
+        }
+    } else {
+        this.style.backgroundColor = randomColor();
+    }
 }
 
 function paint() {
